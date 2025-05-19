@@ -106,7 +106,7 @@ El servidor MCP expone las siguientes herramientas:
 - *“Consulta las últimas vulnerabilidades críticas usando `euvdb`.”*
 - *“Busca la vulnerabilidad `CVE-2024-0864`.”*
 - *“Filtra vulnerabilidades con score > 9 desde enero de 2024.”*
-- *“Dame los avisos recientes relacionados con Cisco.”*
+- *“Dame los avisos recientes relacionados con CISCO.”*
 
 ---
 
