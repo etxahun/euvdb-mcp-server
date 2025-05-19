@@ -22,7 +22,7 @@ euvdb-mcp-server/
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://gitlab.com/usuario/euvdb-mcp-server.git
+git clone https://github.com/etxahun/euvdb-mcp-server.git
 cd euvdb-mcp-server
 ```
 
@@ -59,10 +59,8 @@ uv run server.py
 #### Opción B: Desde WSL (Windows Subsystem for Linux)
 
 ```bash
-wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/esb/.local/bin/uv run server.py'
+wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
 ```
-
-> Asegúrate de que las rutas son correctas en tu entorno.
 
 ---
 
@@ -79,13 +77,11 @@ wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/esb/.local/bin/uv run server.p
     "args": [
       "bash",
       "-c",
-      "cd /home/esb/3-I+D/59-AI_LLM_MCP/6-euvdb-mcp-server/euvdb-mcp-server && /home/esb/.local/bin/uv run server.py"
+      "cd /home/<user>/path/to/project/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py"
     ]
   }
 }
 ```
-
-> Ajusta las rutas en función de tu estructura y sistema operativo.
 
 ---
 
@@ -116,7 +112,7 @@ El servidor MCP expone las siguientes herramientas:
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo licencia MIT.
+Este proyecto se distribuye bajo licencia Apache-2.0.
 
 ---
 
