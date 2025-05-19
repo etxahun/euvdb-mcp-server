@@ -30,7 +30,7 @@ cd euvdb-mcp-server
 
 ### 2. Crear entorno virtual e instalar dependencias
 
-Requisitos: Python 3.10 o superior, y [`uv`](https://github.com/astral-sh/uv) como gestor de entorno (opcional pero recomendado).
+**Requisitos**: Python 3.10 o superior, y [`uv`](https://github.com/astral-sh/uv) como gestor de entorno (opcional pero recomendado).
 
 ```bash
 # Instalar uv si no lo tienes
