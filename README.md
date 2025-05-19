@@ -26,8 +26,6 @@ git clone https://github.com/etxahun/euvdb-mcp-server.git
 cd euvdb-mcp-server
 ```
 
-> Sustituye la URL si utilizas GitHub.
-
 ---
 
 ### 2. Crear entorno virtual e instalar dependencias
