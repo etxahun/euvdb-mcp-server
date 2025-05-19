@@ -66,7 +66,10 @@ wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/<user>/.local/bin/uv run serve
 
 ## ⚙️ Integración con Claude en VSCode
 
-1. Abre VSCode y asegúrate de tener instalada la extensión oficial de **Claude AI**.
+1. Abre VSCode y asegúrate de tener instalada la extensión oficial de **Claude AI Assistant**.
+
+   * **Nota**:  Si tienes instalado "Claude Desktop" no será necesario instalar la extensión. 
+   
 2. Abre el archivo `settings.json` (`Ctrl+Shift+P` → "Preferences: Open Settings (JSON)").
 3. Añade lo siguiente:
 
