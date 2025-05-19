@@ -43,7 +43,7 @@ uv venv
 source .venv/bin/activate
 
 # Instalar dependencias
-uv pip install mcp[cli] httpx
+uv add "mcp[cli]" httpx
 ```
 
 ---
