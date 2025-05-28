@@ -62,6 +62,17 @@ wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/<user>/.local/bin/uv run serve
 
 ---
 
+## 🧪 Probar localmente con Docker
+
+Desde la terminal haremos lo siguiente:
+
+```bash
+docker build -t mcp-euvdb .
+docker run --rm mcp-euvdb
+```
+
+---
+
 ## ⚙️ Integración con Claude en VSCode
 
 1. Abre VSCode y asegúrate de tener instalada la extensión oficial de **Claude AI Assistant**.
