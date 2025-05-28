@@ -113,7 +113,7 @@ El servidor MCP expone las siguientes herramientas:
 
 ---
 
-## 💬 Ejemplos de prompts en Claude
+## 💬 Ejemplos de prompts
 
 - *“Consulta las últimas vulnerabilidades críticas usando `euvdb`.”*
 - *“Busca la vulnerabilidad `CVE-2024-0864`.”*
