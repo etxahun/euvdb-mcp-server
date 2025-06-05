@@ -1,6 +1,6 @@
 # 🛡️ EUVDB MCP Server
 
-Servidor MCP en Python que permite interactuar con la API pública de vulnerabilidades de ENISA (EUVDB) mediante el protocolo [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
+Servidor MCP en Python que permite interactuar con la [API pública de vulnerabilidades de ENISA (EUVDB)](https://euvd.enisa.europa.eu/), mediante el protocolo [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
 
 Este servidor expone herramientas de consulta que pueden ser invocadas desde asistentes de IA compatibles con MCP, como Claude Desktop o Visual Studio Code (VSCode).
 
@@ -83,15 +83,36 @@ docker run --rm mcp-euvdb
 3. Añade lo siguiente:
 
 ```json
-"mcp.servers": {
-  "euvdb": {
-    "command": "wsl.exe",
-    "args": [
-      "bash",
-      "-c",
-      "cd /home/<user>/path/to/project/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py"
-    ]
-  }
+"mcp": {
+    "servers": {
+        "euvdb": {
+            "command": "wsl.exe",
+            "args": [
+                "bash",
+                "-c",
+                "cd /home/<user>/path/to/project/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py"
+            ]
+        }
+     }
+}
+```
+
+En caso de que se haya creado la imagen Docker de mcp-euvdb, podremos indicar dentro del fichero "settings.json" de VSCode que este lo ejecute. Para ello, deberemos configurar lo siguiente:
+
+```json
+"mcp": {
+    "servers": {
+        "euvdb": {
+           "command": "wsl.exe",
+           "args": [
+               "docker",
+               "run",
+               "--rm",
+               "-i",
+               "mcp-euvdb"
+           ]
+        }
+     }
 }
 ```
 

@@ -16,4 +16,5 @@ RUN pip install --upgrade pip \
  && pip install fastmcp httpx
 
 # Comando por defecto
+#CMD ["uv", "run", "server.py"]
 CMD ["python", "server.py"]
