@@ -1,72 +1,62 @@
 # 🛡️ EUVDB MCP Server
 
-Servidor MCP en Python que permite interactuar con la [API pública de vulnerabilidades de ENISA (EUVDB)](https://euvd.enisa.europa.eu/), mediante el protocolo [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
+MCP Server in Python to interact with the [ENISA EUVDB Public Vulnerability API](https://euvd.enisa.europa.eu/), using the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/).
 
-Este servidor expone herramientas de consulta que pueden ser invocadas desde asistentes de IA compatibles con MCP, como Claude Desktop o Visual Studio Code (VSCode).
+This server exposes query tools that can be invoked from MCP-compatible AI assistants like Claude Desktop or Visual Studio Code (VSCode).
 
 ---
 
-## 📁 Estructura del proyecto
+## 📁 Project Structure
 
-```
 euvdb-mcp-server/
-├── Dockerfile        # Fichero 'Dockerfile' para la creación de la imagen Docker del programa
-├── LICENSE           # Licencia del proyecto
-├── README.md         # Documentación del proyecto
-├── server.py         # Servidor MCP con herramientas para consultar la API de ENISA
-└── pyproject.toml    # (opcional, si se usa uv como gestor)
-```
+├── Dockerfile # Dockerfile to build the Docker image of the project
+├── LICENSE # Project license
+├── README.md # Project documentation
+├── server.py # MCP server with tools to query the ENISA API
+└── pyproject.toml # (optional, if using uv as package manager)
+
 
 ---
 
-## 🚀 Puesta en marcha
+## 🚀 Getting Started
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/etxahun/euvdb-mcp-server.git
 cd euvdb-mcp-server
-```
 
----
-
-### 2. Crear entorno virtual e instalar dependencias
-
-**Requisitos**: Python 3.10 o superior, y [`uv`](https://github.com/astral-sh/uv) como gestor de entorno (opcional pero recomendado).
+### 2. Create virtual environment and install dependencies
+**Requirements**: Python 3.10 or higher, and [uv](https://github.com/astral-sh/uv) as environment manager (optional but recommended).
 
 ```bash
-# Instalar uv si no lo tienes
+# Install uv if not already available
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Inicializar entorno
+# Initialize virtual environment
 uv venv
 source .venv/bin/activate
 
-# Instalar dependencias
+# Install dependencies
 uv add "mcp[cli]" httpx
 ```
 
----
-
-### 3. Ejecutar el servidor MCP
-
-#### Opción A: Ejecución local
-
+### 3. Run the MCP server
+* Option A: Run locally
 ```bash
 uv run server.py
-```
+````
 
-#### Opción B: Desde WSL (Windows Subsystem for Linux)
-
+* Option B: From WSL (Windows Subsystem for Linux)
 ```bash
-wsl bash -c 'cd /ruta/a/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
+wsl bash -c 'cd /path/to/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
 ```
 
 ---
 
-## 🧪 Probar localmente con Docker
+## 🧪 Test locally with Docker
 
-Desde la terminal haremos lo siguiente:
+Run the following commands from the terminal:
 
 ```bash
 docker build -t mcp-euvdb .
@@ -75,14 +65,15 @@ docker run --rm mcp-euvdb
 
 ---
 
-## ⚙️ Integración con Claude en VSCode
+##⚙️ Integration with Claude in VSCode
 
-1. Abre VSCode y asegúrate de tener instalada la extensión oficial de **Claude AI Assistant**.
+1. Open VSCode and ensure the Claude AI Assistant extension is installed.
 
-   * **Nota**:  Si tienes instalado "Claude Desktop" no será necesario instalar la extensión. 
-   
-2. Abre el archivo `settings.json` (`Ctrl+Shift+P` → "Preferences: Open Settings (JSON)").
-3. Añade lo siguiente:
+* **Note**: If you are using "Claude Desktop", installing the extension is not necessary.
+
+2. Open settings.json (Ctrl+Shift+P → "Preferences: Open Settings (JSON)").
+
+3. Add the following:
 
 ```json
 "mcp": {
@@ -99,7 +90,7 @@ docker run --rm mcp-euvdb
 }
 ```
 
-En caso de que se haya creado la imagen Docker de mcp-euvdb, podremos indicar dentro del fichero "settings.json" de VSCode que este lo ejecute. Para ello, deberemos configurar lo siguiente:
+If the Docker image mcp-euvdb has already been built, you can configure VSCode to use it directly by modifying the settings.json as follows:
 
 ```json
 "mcp": {
@@ -120,37 +111,39 @@ En caso de que se haya creado la imagen Docker de mcp-euvdb, podremos indicar de
 
 ---
 
-## 🧪 Herramientas disponibles
+##🧪 Available Tools
 
-El servidor MCP expone las siguientes herramientas:
+The MCP server exposes the following tools:
 
-| Herramienta                      | Descripción                                                                 |
+| Tool                             | Descripction                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
-| `get_last_vulnerabilities()`     | Últimas vulnerabilidades publicadas (máx 8)                                |
-| `get_exploited_vulnerabilities()`| Vulnerabilidades recientemente explotadas (máx 8)                          |
-| `get_critical_vulnerabilities()` | Vulnerabilidades críticas más recientes (máx 8)                            |
-| `get_vulnerability_by_id(id)`    | Consulta una vulnerabilidad por CVE ID (e.g. `CVE-2024-0864`)              |
-| `get_enisaid(id)`                | Consulta por ENISA ID (e.g. `EUVD-2024-45012`)                              |
-| `get_advisory(id)`               | Obtiene un aviso por su ID (e.g. `cisco-sa-ata19x-...`)                     |
-| `query_vulnerabilities(...)`     | Consulta avanzada con filtros (por score, EPSS, fecha, producto, etc.)     |
+| `get_last_vulnerabilities()`     | Latest published vulnerabilities (max 8)                                 
+| `get_exploited_vulnerabilities()`| Recently exploited vulnerabilities (max 8)                          |
+| `get_critical_vulnerabilities()` | Latest critical vulnerabilities (max 8)                            |
+| `get_vulnerability_by_id(id)`    | Query a vulnerability by CVE ID (e.g., CVE-2024-0864)              |
+| `get_enisaid(id)`                | Query by ENISA ID (e.g., EUVD-2024-45012)                              |
+| `get_advisory(id)`               | Fetch advisory by ID (e.g., cisco-sa-ata19x-...)                     |
+| `query_vulnerabilities(...)`     | Advanced query with filters (score, EPSS, date, product, etc.)     |
 
 ---
 
-## 💬 Ejemplos de prompts
+## 💬 Prompt Examples
 
-- *“Consulta las últimas vulnerabilidades críticas usando `euvdb`.”*
-- *“Busca la vulnerabilidad `CVE-2024-0864`.”*
-- *“Filtra vulnerabilidades con score > 9 desde enero de 2024.”*
-- *“Dame los avisos recientes relacionados con CISCO.”*
-
----
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo licencia Apache-2.0.
+* “Query the latest critical vulnerabilities using euvdb.”
+* “Look up vulnerability CVE-2024-0864.”
+* “Filter vulnerabilities with score > 9 since January 2024.”
+* “Show recent advisories related to CISCO.”
 
 ---
 
-## 🤝 Créditos
+## 📄 License
 
-Este servidor consulta la [API pública de vulnerabilidades de ENISA (EUVDB)](https://euvd.enisa.europa.eu/), de acceso libre y sin autenticación.
+This project is licensed under Apache-2.0.
+
+--- 
+
+## 🤝 Credits
+
+This server interacts with the ENISA EUVDB Public Vulnerability API, which is open and does not require authentication.
+
+---
