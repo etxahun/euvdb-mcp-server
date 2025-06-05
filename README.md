@@ -146,5 +146,5 @@ This project is licensed under Apache-2.0.
 
 ## 🤝 Credits
 
-This server interacts with the ENISA EUVDB Public Vulnerability API, which is open and does not require authentication.
+This server interacts with the [ENISA EUVDB Public Vulnerability API](https://euvd.enisa.europa.eu/), which is open and does not require authentication.
 
