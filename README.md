@@ -8,7 +8,7 @@ This server exposes query tools that can be invoked from MCP-compatible AI assis
 
 ## 📁 Project Structure
 
-````
+```
 euvdb-mcp-server/
 ├── Dockerfile # Dockerfile to build the Docker image of the project
 ├── LICENSE # Project license
