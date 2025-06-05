@@ -10,8 +10,10 @@ Este servidor expone herramientas de consulta que pueden ser invocadas desde asi
 
 ```
 euvdb-mcp-server/
-├── server.py         # Servidor MCP con herramientas para consultar la API de ENISA
+├── Dockerfile        # Fichero 'Dockerfile' para la creación de la imagen Docker del programa
+├── LICENSE           # Licencia del proyecto
 ├── README.md         # Documentación del proyecto
+├── server.py         # Servidor MCP con herramientas para consultar la API de ENISA
 └── pyproject.toml    # (opcional, si se usa uv como gestor)
 ```
 
