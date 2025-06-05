@@ -4,7 +4,7 @@ MCP Server in Python to interact with the [ENISA EUVDB Public Vulnerability API]
 
 This server exposes query tools that can be invoked from MCP-compatible AI assistants like Claude Desktop or Visual Studio Code (VSCode).
 
----
+
 
 ## 📁 Project Structure
 
@@ -17,7 +17,7 @@ euvdb-mcp-server/
 └── pyproject.toml # (optional, if using uv as package manager)
 ```
 
----
+
 
 ## 🚀 Getting Started
 
@@ -54,7 +54,7 @@ uv add "mcp[cli]" httpx
   wsl bash -c 'cd /path/to/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
   ```
 
----
+
 
 ## 🧪 Test locally with Docker
 
@@ -65,7 +65,7 @@ docker build -t mcp-euvdb .
 docker run --rm mcp-euvdb
 ```
 
----
+
 
 ## ⚙️ Integration with Claude in VSCode
 
@@ -111,7 +111,7 @@ If the Docker image mcp-euvdb has already been built, you can configure VSCode t
 }
 ```
 
----
+
 
 ## 🧪 Available Tools
 
@@ -127,7 +127,7 @@ The MCP server exposes the following tools:
 | `get_advisory(id)`               | Fetch advisory by ID (e.g., cisco-sa-ata19x-...)                     |
 | `query_vulnerabilities(...)`     | Advanced query with filters (score, EPSS, date, product, etc.)     |
 
----
+
 
 ## 💬 Prompt Examples
 
@@ -136,16 +136,15 @@ The MCP server exposes the following tools:
 * “Filter vulnerabilities with score > 9 since January 2024.”
 * “Show recent advisories related to CISCO.”
 
----
+
 
 ## 📄 License
 
 This project is licensed under Apache-2.0.
 
---- 
+ 
 
 ## 🤝 Credits
 
 This server interacts with the ENISA EUVDB Public Vulnerability API, which is open and does not require authentication.
 
----
