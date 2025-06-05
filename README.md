@@ -67,7 +67,7 @@ docker run --rm mcp-euvdb
 
 ---
 
-##⚙️ Integration with Claude in VSCode
+## ⚙️ Integration with Claude in VSCode
 
 1. Open VSCode and ensure the Claude AI Assistant extension is installed.
 
@@ -113,7 +113,7 @@ If the Docker image mcp-euvdb has already been built, you can configure VSCode t
 
 ---
 
-##🧪 Available Tools
+## 🧪 Available Tools
 
 The MCP server exposes the following tools:
 
