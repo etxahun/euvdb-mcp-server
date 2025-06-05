@@ -92,7 +92,7 @@ docker run --rm mcp-euvdb
 }
 ```
 
-If the Docker image mcp-euvdb has already been built, you can configure VSCode to use it directly by modifying the settings.json as follows:
+If the Docker image **mcp-euvdb** has already been built, you can configure **VSCode** to use it directly by modifying the **settings.json** file as follows:
 
 ```json
 "mcp": {
