@@ -44,15 +44,15 @@ uv add "mcp[cli]" httpx
 ```
 
 ### 3. Run the MCP server
-* Option A: Run locally
-```bash
-uv run server.py
-````
+* **Option A**: Run locally
+  ```bash
+  uv run server.py
+  ```
 
-* Option B: From WSL (Windows Subsystem for Linux)
-```bash
-wsl bash -c 'cd /path/to/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
-```
+* **Option B**: From WSL (Windows Subsystem for Linux)
+  ```bash
+  wsl bash -c 'cd /path/to/euvdb-mcp-server && /home/<user>/.local/bin/uv run server.py'
+  ```
 
 ---
 
