@@ -26,6 +26,7 @@ euvdb-mcp-server/
 ```bash
 git clone https://github.com/etxahun/euvdb-mcp-server.git
 cd euvdb-mcp-server
+```
 
 ### 2. Create virtual environment and install dependencies
 **Requirements**: Python 3.10 or higher, and [uv](https://github.com/astral-sh/uv) as environment manager (optional but recommended).
